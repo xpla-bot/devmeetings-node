@@ -1,4 +1,8 @@
-var activities = [
+// 3. Dodatkowo włączamy tryb "strict"
+'use strict'
+
+// 2. Możemy też deklarować stałe (nie można do nich przypisać).
+const activities = [
   {
     id: 3,
     alt: 'Bicycle',
@@ -19,36 +23,34 @@ var activities = [
   }
 ]
 
-var $activities = document.querySelector('.activities')
+const $activities = document.querySelector('.activities')
 
-for (var k in activities) {
-  // Aktywność mamy zadeklarowaną wewnątrz pętli.
-  var activity = activities[k]
+for (let k in activities) {
+  // 1. Używamy `let` aby zadeklarować zmienną o zasięgu blokowym.
+  let activity = activities[k]
 
-  var $activity = document.createElement('div')
+  let $activity = document.createElement('div')
   $activity.className = 'activity'
 
-  var $img = document.createElement('img')
+  let $img = document.createElement('img')
   $img.classList.add('activity__img')
   $img.width = 250
   $img.height = 250
   $img.alt = activity.alt
   $img.src = `https://xpla.org/ext/lorempixel/250/250/sports/${activity.id}/`
 
-  var $title = document.createElement('h3')
+  let $title = document.createElement('h3')
   $title.classList.add('activity__name')
   $title.textContent = activity.name
 
-  var $time = document.createElement('p')
+  let $time = document.createElement('p')
   $time.classList.add('activity__description')
   $time.innerHTML = `Time spent: <strong>${activity.timeSpent} min</strong>`
 
-  var $button = document.createElement('button')
+  let $button = document.createElement('button')
   $button.classList.add('activity__button--paused')
   $button.innerHTML = '&#9654; Start'
 
-  // 5/ Tworzymy anonimową funkcję, które obsłuzy zdarzenie `click`.
-  // -- Na razie po prostu wyświetlmy nazwę aktywności.
   $button.addEventListener('click', function () {
     window.alert(`Starting tracking: ${activity.name}`)
     console.log(activity)
@@ -62,5 +64,5 @@ for (var k in activities) {
   $activities.appendChild($activity)
 }
 
-// Czy `activity` powinno być tutaj dostępne?
+// 4. Odwołanie do activity powoduje `ReferenceError`
 console.log(activity)
