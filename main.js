@@ -1,4 +1,3 @@
-// 20/ Dane wrzucamy do tablicy
 var activities = [
   {
     id: 3,
@@ -22,8 +21,8 @@ var activities = [
 
 var $activities = document.querySelector('.activities')
 
-// 2/ i wyświetlamy aktywności dodająć je w pętli...
 for (var k in activities) {
+  // Aktywność mamy zadeklarowaną wewnątrz pętli.
   var activity = activities[k]
 
   var $activity = document.createElement('div')
@@ -48,11 +47,20 @@ for (var k in activities) {
   $button.classList.add('activity__button--paused')
   $button.innerHTML = '&#9654; Start'
 
+  // 5/ Tworzymy anonimową funkcję, które obsłuzy zdarzenie `click`.
+  // -- Na razie po prostu wyświetlmy nazwę aktywności.
+  $button.addEventListener('click', function () {
+    window.alert(`Starting tracking: ${activity.name}`)
+    console.log(activity)
+  })
+
   $activity.appendChild($img)
   $activity.appendChild($title)
   $activity.appendChild($time)
   $activity.appendChild($button)
 
-  // ...w każdej iteracji dodając do DOM
   $activities.appendChild($activity)
 }
+
+// Czy `activity` powinno być tutaj dostępne?
+console.log(activity)
