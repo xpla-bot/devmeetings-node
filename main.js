@@ -15,11 +15,10 @@ class View {
     this._model = model
   }
 
-  // 5/ Spróbujmy zmapować elementy modelu i wywołać `renderActivity`.
+  // 4/ Lambdy "dziedziczą" kontekst scopu wyżej. Dodatkowo domyślnie zwracają wartość.
   render () {
-    return this._model.activities.map(function (activity) {
-      return this.renderActivity(activity)
-    })
+    return this._model.activities
+      .map(activity => this.renderActivity(activity))
   }
 
   renderActivity (activity) {
@@ -45,7 +44,8 @@ class View {
     $button.classList.add('activity__button--paused')
     $button.innerHTML = '&#9654; Start'
 
-    $button.addEventListener('click', function () {
+    // 4/ Tutaj nie gubimy kontekstu, ale w przyszłości możemy to swobodnie zamienić wywołaniem funkcji z klasy.
+    $button.addEventListener('click', () => {
       window.alert(`Starting tracking: ${activity.name}`)
       console.log(activity)
     })
@@ -81,6 +81,7 @@ const model = new Model([
 ])
 const view = new View(model)
 const $activities = document.querySelector('.activities')
-view.render().map(function ($activity) {
+// 3/ Używamy lambdy, żeby mniej klepać.
+view.render().map($activity => {
   $activities.appendChild($activity)
 })
