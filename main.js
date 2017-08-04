@@ -1,6 +1,5 @@
 'use strict'
 
-// 9/ Klasa modelu
 class Model {
   constructor (activities) {
     this._activities = activities
@@ -11,27 +10,18 @@ class Model {
   }
 }
 
-// 6/ i klasa widoku
 class View {
   constructor (model) {
     this._model = model
   }
 
+  // 5/ Spróbujmy zmapować elementy modelu i wywołać `renderActivity`.
   render () {
-    const $activities = []
-    const activities = this._model.activities
-
-    for (let k in activities) {
-      const activity = activities[k]
-      const $activity = this.renderActivity(activity)
-
-      $activities.push($activity)
-    }
-
-    return $activities
+    return this._model.activities.map(function (activity) {
+      return this.renderActivity(activity)
+    })
   }
 
-  // A z drugiej zwracamy reprezentacje pojedynczej aktywności
   renderActivity (activity) {
     const $activity = document.createElement('div')
     $activity.className = 'activity'
