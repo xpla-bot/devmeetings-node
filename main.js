@@ -1,41 +1,25 @@
 'use strict'
 
-// 27/ W modelu przechowujemy aktualną listę aktywności
-const Model = {
-  // W JS wszystko jest publiczne, więc stosujemy konwencję aby oznaczy pola prywatne.
-  _activities: [
-    {
-      id: 3,
-      alt: 'Bicycle',
-      name: 'Cycling',
-      timeSpent: 120
-    },
-    {
-      id: 7,
-      alt: 'Swimmer',
-      name: 'Swimming',
-      timeSpent: 60
-    },
-    {
-      id: 9,
-      alt: 'Runners',
-      name: 'Running',
-      timeSpent: 30
-    }
-  ],
+// 9/ Klasa modelu
+class Model {
+  constructor (activities) {
+    this._activities = activities
+  }
 
-  // 3/ Publicznie wystawiamy getter.
   get activities () {
     return this._activities
   }
 }
 
-const View = {
-  // 14/ Widok dzielimy na dwie funkcje.
-  // -- Pierwsza z nich renderuje model (wiele aktywności)
-  render (model) {
+// 6/ i klasa widoku
+class View {
+  constructor (model) {
+    this._model = model
+  }
+
+  render () {
     const $activities = []
-    const activities = model.activities
+    const activities = this._model.activities
 
     for (let k in activities) {
       const activity = activities[k]
@@ -45,7 +29,7 @@ const View = {
     }
 
     return $activities
-  },
+  }
 
   // A z drugiej zwracamy reprezentacje pojedynczej aktywności
   renderActivity (activity) {
@@ -85,8 +69,28 @@ const View = {
   }
 }
 
-// 4/ Na koniec musimy zaincjalizować całą aplikację i wyrenderować model.
+const model = new Model([
+  {
+    id: 3,
+    alt: 'Bicycle',
+    name: 'Cycling',
+    timeSpent: 120
+  },
+  {
+    id: 7,
+    alt: 'Swimmer',
+    name: 'Swimming',
+    timeSpent: 60
+  },
+  {
+    id: 9,
+    alt: 'Runners',
+    name: 'Running',
+    timeSpent: 30
+  }
+])
+const view = new View(model)
 const $activities = document.querySelector('.activities')
-View.render(Model).map(function ($activity) {
+view.render().map(function ($activity) {
   $activities.appendChild($activity)
 })
