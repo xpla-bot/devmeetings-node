@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "config": "^1.26.1",
     "connect": "^3.6.3",
     "errorhandler": "^1.5.0",
     "morgan": "^1.8.2",

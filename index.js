@@ -4,13 +4,14 @@ const connect = require('connect')
 const morgan = require('morgan')
 const serveStatic = require('serve-static')
 const errorhandler = require('errorhandler')
+const config = require('config')
 
-const port = process.env.PORT || 3000
+// Użycie zmiennej tez moglibyśmy zastąpić node-config
+const port = process.env.PORT || config.get('port')
 
 const app = connect()
 
-// 3/ Dodajemy middleware ale tylko w developmencie.
-if (process.env.NODE_ENV !== 'production') {
+if (config.get('env') !== 'production') {
   app.use(errorhandler())
 }
 
@@ -61,11 +62,11 @@ app.use('/version', (req, res) => {
   })
   res.end(JSON.stringify({
     version: require('./package.json').version,
-    env: process.env.NODE_ENV || 'dev'
+    // pobieramy środowisko z configa
+    env: config.get('env')
   }))
 })
 
-// 3/ Dodamy też endpoint, którym możemy wysypać serwer.
 app.use('/crash', () => {
   throw new Error('Crashing!')
 })
