@@ -1,7 +1,15 @@
-# Inicjalizujemy nowy projekt.
-$ npm init
-# Możemy użyć flagi -f aby przyspieszyć pominąć pytania.
 $ npm init -f
-
-# Następnie będziemy odpalać serwer korzystając z npm start
 $ npm start
+
+# Uruchamiamy wrk
+$ wrk       \
+# Czas testu 5 sekund
+  -d 5s     \
+# Uruchomimy 8 wątków
+  -t 8      \
+# A każdy z nich będzie utrzymywał 1k połączeń
+  -c 1000   \
+# Dodatkowo wyświetlimy dystrybucje latency
+  --latency \
+# I podajemy adres naszego serwera
+  http://localhost:3000/
