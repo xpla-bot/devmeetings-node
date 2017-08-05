@@ -3,10 +3,16 @@ const fs = require('fs')
 const connect = require('connect')
 const morgan = require('morgan')
 const serveStatic = require('serve-static')
+const errorhandler = require('errorhandler')
 
 const port = process.env.PORT || 3000
 
 const app = connect()
+
+// 3/ Dodajemy middleware ale tylko w developmencie.
+if (process.env.NODE_ENV !== 'production') {
+  app.use(errorhandler())
+}
 
 app.use((req, res, next) => {
   const start = process.hrtime()
@@ -49,18 +55,19 @@ app.use('/api/activities', (req, res) => {
   ]))
 })
 
-// Rejestrujemy nowy middleware.
 app.use('/version', (req, res) => {
   res.writeHead(200, {
     'Content-Type': 'application/json'
   })
-  // 6/ Zwracamy JSONa z dwoma polami
   res.end(JSON.stringify({
-    // Wersję wyciągamy z package.json
     version: require('./package.json').version,
-    // Dodajemy też środowisko korzystając ze standardowej zmiennej NODE_ENV
     env: process.env.NODE_ENV || 'dev'
   }))
+})
+
+// 3/ Dodamy też endpoint, którym możemy wysypać serwer.
+app.use('/crash', () => {
+  throw new Error('Crashing!')
 })
 
 http.createServer(app).listen(port, () => {
