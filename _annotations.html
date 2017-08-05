@@ -1,0 +1,5 @@
+<details>
+  <p>W poprzednim sprincie decydowaliśmy czy użyć metody <code>fs.readFile</code> czy <code>fs.readFileSync</code>. Jaka dokładnie jest między nimi różnica?</p>
+  <p>Node.js jest jednowątkowy. Operacje, które mogą zająć dużo czasu są delegowane i kod jest wznawiany po ich zakończeniu.</p>
+  <p>Realizowane jest to przez <code>EventLoop</code> - odpowiedź na problem C10K.</p>
+</details>
