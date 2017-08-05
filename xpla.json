@@ -20,6 +20,50 @@
     {
       "name": "connect",
       "title": "Mikro-framework connect"
+    },
+    {
+      "name": "devenv",
+      "title": "Srodowisko developerskie"
+    },
+    {
+      "name": "express",
+      "title": "Express.js"
+    },
+    {
+      "name": "restapi",
+      "title": "Budowanie REST API"
+    },
+    {
+      "name": "router",
+      "title": "Express Router i organizacja kodu"
+    },
+    {
+      "name": "validation",
+      "title": "Walidacja i Sanityzacja"
+    },
+    {
+      "name": "auth",
+      "title": "Autentykacja i Autoryzacja"
+    },
+    {
+      "name": "security",
+      "title": "Security"
+    },
+    {
+      "name": "perf",
+      "title": "Performance & Debugging"
+    },
+    {
+      "name": "middleware",
+      "title": "Node jako middleware"
+    },
+    {
+      "name": "deployment",
+      "title": "Deployment & Produkcja"
+    },
+    {
+      "name": "alternatives",
+      "title": "Alternatywne frameworki"
     }
   ]
 }
