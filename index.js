@@ -49,6 +49,20 @@ app.use('/api/activities', (req, res) => {
   ]))
 })
 
+// Rejestrujemy nowy middleware.
+app.use('/version', (req, res) => {
+  res.writeHead(200, {
+    'Content-Type': 'application/json'
+  })
+  // 6/ Zwracamy JSONa z dwoma polami
+  res.end(JSON.stringify({
+    // Wersję wyciągamy z package.json
+    version: require('./package.json').version,
+    // Dodajemy też środowisko korzystając ze standardowej zmiennej NODE_ENV
+    env: process.env.NODE_ENV || 'dev'
+  }))
+})
+
 http.createServer(app).listen(port, () => {
   console.log(`Listening on :${port}`)
 })
