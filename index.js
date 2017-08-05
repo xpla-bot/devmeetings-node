@@ -10,23 +10,13 @@ const server = http.createServer((req, res) => {
 
   console.log(url)
 
+  // 6/ 2. Serwujemy każdy z plików naszego frontendu.
   if (url === '/' || url === '/index.html') {
-    // Jako 3 argument musimy podać callback - tam dopiero dostajemy przeczytany plik.
-    fs.readFile('./static/index.html', 'utf8', (err, content) => {
-      // 6/ Musimy obsłużyć błąd.
-      if (err) {
-        console.error(err)
-        res.writeHead(500)
-        res.end(`Internal Error`)
-        return
-      }
-
-      // 4/ I poprawną odpowiedź
-      res.writeHead(200, {
-        'Content-Type': 'text/html'
-      })
-      res.end(content)
-    })
+    serveFile('index.html', 'text/html', res)
+  } else if (url === '/main.js') {
+    serveFile('main.js', 'application/javascript', res)
+  } else if (url === '/styles.css') {
+    serveFile('styles.css', 'text/css', res)
   } else {
     res.writeHead(404)
     res.end('404: Not Found')
@@ -36,3 +26,20 @@ const server = http.createServer((req, res) => {
 server.listen(port, () => {
   console.log(`Listening on :${port}`)
 })
+
+// 15/ 1. Przenosimy serwowanie pliku do funkcji pomocniczej
+function serveFile (file, mime, res) {
+  fs.readFile(`./static/${file}`, 'utf8', (err, content) => {
+    if (err) {
+      console.error(err)
+      res.writeHead(500)
+      res.end(`Internal Error`)
+      return
+    }
+
+    res.writeHead(200, {
+      'Content-Type': mime
+    })
+    res.end(content)
+  })
+}
