@@ -1,6 +1,9 @@
 $ npm i --save-dev standard
 $ npm i --save-dev nodemon
 $ npm i --save errorhandler
-
-# Instalujemy config
 $ npm i --save config
+
+# 2/ Instalujemy supertest i bibliotekę do asercji i runner
+$ npm i --save-dev supertest
+$ npm i --save-dev chai
+$ npm i --save-dev mocha
