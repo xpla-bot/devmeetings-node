@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>serve-static</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="_console" >
+        	<script id="_console" highlight="1-5" type="application/octetstream" src="007/_console"></script>
+	<script id="index.js" highlight="3-11,23-33,54-59" type="application/octetstream" src="007/index.js"></script>
+	<script id="package-lock.json" highlight="33-43,53-63,72-103,133-189" type="application/octetstream" src="007/package-lock.json"></script>
+	<script id="package.json" highlight="12-18" type="application/octetstream" src="007/package.json"></script>
+	<script id="static/index.html" type="application/octetstream" src="003/static/index.html"></script>
+	<script id="static/main.js" type="application/octetstream" src="003/static/main.js"></script>
+	<script id="static/styles.css" type="application/octetstream" src="003/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Automagiczne serwowanie statycznych plików</h1></header>
+            <details>
+  <p>Drugim przydatnym middlewarem, z którego skorzystamy będzie <code>serve-static</code>.</p>
+  <p>Automatycznie będzie serwował statyczne pliki.</p>
+  <p>Więcej middlewarów można znaleźć <a href="https://github.com/senchalabs/connect#middleware">na githubie connect</a></p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

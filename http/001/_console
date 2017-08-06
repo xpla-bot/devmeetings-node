@@ -1,0 +1,7 @@
+# Inicjalizujemy nowy projekt.
+$ npm init
+# Możemy użyć flagi -f aby przyspieszyć pominąć pytania.
+$ npm init -f
+
+# Następnie będziemy odpalać serwer korzystając z npm start
+$ npm start

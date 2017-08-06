@@ -1,0 +1,2 @@
+# Dodajemy zależność developerską:
+$ npm i --save-dev standard

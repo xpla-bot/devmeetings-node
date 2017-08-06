@@ -1,0 +1,5 @@
+$ npm i --save connect
+$ npm i --save morgan
+
+# Instalujemy serve-static
+$ npm i --save serve-static

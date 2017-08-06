@@ -1,0 +1,11 @@
+$ npm init -f
+$ npm start
+$ wrk       \
+  -d 5s     \
+  -t 8      \
+  -c 1000   \
+  --latency \
+  http://localhost:3000/
+
+# Możemy odpytać serwer za pomocą http (httpie)
+$ http http://localhost:3000/api/activities

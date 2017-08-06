@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>config</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="_console" >
+        	<script id="_console" highlight="1-6" type="application/octetstream" src="005/_console"></script>
+	<script id="config/default.json" highlight="1-5" type="application/octetstream" src="005/config/default.json"></script>
+	<script id="config/production.json" highlight="1-4" type="application/octetstream" src="005/config/production.json"></script>
+	<script id="index.js" highlight="4-17,62-72" type="application/octetstream" src="005/index.js"></script>
+	<script id="package-lock.json" highlight="302-316,1458-1468,1884-1890" type="application/octetstream" src="005/package-lock.json"></script>
+	<script id="package.json" highlight="12-18" type="application/octetstream" src="005/package.json"></script>
+	<script id="static/index.html" type="application/octetstream" src="001/static/index.html"></script>
+	<script id="static/main.js" type="application/octetstream" src="001/static/main.js"></script>
+	<script id="static/styles.css" type="application/octetstream" src="001/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Zarządzanie konfiguracją</h1></header>
+            <details>
+  <p>W różnych środowiskach zwykle chcemy używać różnych parametrów.</p>
+  <p>Robienie <code>if</code>ów od globalnego <code>process.env.NODE_ENV</code> jest mało eleganckie.</p>
+  <p>Zobaczmy jak można to rozwiązać używając <code>node-config</code>.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

@@ -1,0 +1,5 @@
+$ npm i --save-dev standard
+$ npm i --save-dev nodemon
+
+# Dodajemy middleware
+$ npm i --save errorhandler
