@@ -1,0 +1,33 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Event Loop Timers</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+
+      <body class="xp-slide">
+        <div class="xp-row center with-comments">
+          <img src="002/resources/eloop.png" style="max-width:90%;max-height:90%;display:block;margin:0 auto;"/>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations modal>
+            <header><h1>Timers</h1></header>
+            <details>
+  <p>Warto wiedzieć w jakiej kolejności przetwarzane są rzeczy w <code>EventLoop</code>. Wyjaśnimy to na diagramie.</p>
+  <p><code>setTimeout</code> vs <code>setImmediate</code> vs <code>process.nextTick</code></p>
+  <p>Dodatkowo warto obejrzeć/przeczytać:</p>
+  <ul>
+    <li><a href="https://www.youtube.com/watch?v=Q_0z2v3QJg4">Need for Async - Konrad Malawski</a></li>
+    <li><a href="https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/">EventLoop timers and nextTick</a></li>
+  </ul>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

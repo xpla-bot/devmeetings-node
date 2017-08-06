@@ -1,0 +1,46 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>wrk</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="_console" >
+        	<script id="_console" highlight="1-15" type="application/octetstream" src="005/_console"></script>
+	<script id="index.js" type="application/octetstream" src="004/index.js"></script>
+	<script id="package.json" type="application/octetstream" src="001/package.json"></script>
+	<script id="static/index.html" type="application/octetstream" src="001/static/index.html"></script>
+	<script id="static/main.js" type="application/octetstream" src="001/static/main.js"></script>
+	<script id="static/styles.css" type="application/octetstream" src="001/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Testujemy wydajność</h1></header>
+            <details>
+  <p>Z ciekawości sprawdzimy wydajność naszego serwera.</p>
+  <p>Użyjemy do tego narzędzia <code>wrk</code> (lub <code>ab</code>).</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

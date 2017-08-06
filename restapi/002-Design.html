@@ -1,0 +1,83 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Design</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="app.js" >
+        	<script id="app.js" highlight="45-138" type="application/octetstream" src="002/app.js"></script>
+	<script id="static/main.js" highlight="57-63" type="application/octetstream" src="002/static/main.js"></script>
+	<script id="index.js" type="application/octetstream" src="001/index.js"></script>
+	<script id="index.test.js" type="application/octetstream" src="001/index.test.js"></script>
+	<script id="package-lock.json" type="application/octetstream" src="001/package-lock.json"></script>
+	<script id="package.json" type="application/octetstream" src="001/package.json"></script>
+	<script id="config/default.json" type="application/octetstream" src="001/config/default.json"></script>
+	<script id="config/production.json" type="application/octetstream" src="001/config/production.json"></script>
+	<script id="static/index.html" type="application/octetstream" src="001/static/index.html"></script>
+	<script id="static/styles.css" type="application/octetstream" src="001/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>RESTful API design</h1></header>
+            <details>
+  <p>Jak powinno wyglądać dobre REST API?</p>
+  <ul>
+    <li>Proste i przewidywalne! Najlepiej kiedy w ogóle nie wymaga dokumentacji (no suprises).</li>
+    <li>Powinno zwracać dobre błędy (i status code), tak żeby na podstawie błędu było wiadomo co poprawić.</li>
+    <li>Rzeczowniki, a nie czasowniki. <code>URL</code> zawiera <strong>zasób</strong>, a <code>HTTP verbs</code> określa operację.</li>
+    <li>Traktuj developera jak klienta, a API jak produkt.</li>
+    <li>Buduj tak jakbyś miał je wystawić na zewnątrz.</li>
+  </ul>
+  <table>
+    <thead>
+      <tr>
+        <th>Zasób</th>
+        <th><strong>POST</strong> <br> <strong>C</strong>reate</th>
+        <th><strong>GET</strong> <br> <strong>R</strong>ead</th>
+        <th><strong>PUT/PATCH</strong> <br> <strong>U</strong>pdate</th>
+        <th><strong>DELETE</strong> <br> <strong>D</strong>elete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>/activities</strong> <br> kolekcja</td>
+        <td>stwórz nową aktywność</td>
+        <td>wylistuj aktywności</td>
+        <td>Podmień wszystkie aktywności*</td>
+        <td>Usuń wszystkie aktywności*</td>
+      </tr>
+      <tr>
+        <td><strong>/activities/1234</strong> <br> element</td>
+        <td>stwórz z określonym ID*</td>
+        <td>zwróć pojedynczą aktywność</td>
+        <td>uaktualnij pojedynczą aktywność</td>
+        <td>usuń aktywność</td>
+      </tr>
+    </tbody>
+  </table>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

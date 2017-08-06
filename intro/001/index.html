@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Activity Tracker</title>
+    <link rel="stylesheet" href="https://xpla.org/cdn/normalize/7.0.0/normalize.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Your activities</h1>
+
+    <!-- 23/ Każda aktywnosć -->
+    <div class="activities">
+      <div class="activity">
+        <!-- 7/ ...ma obrazek... -->
+        <img
+          class="activity__img"
+          width="250"
+          height="250"
+          alt="Bicycle"
+          src="https://xpla.org/ext/lorempixel/250/250/sports/3/"
+        >
+        <!-- 3/ ...nazwę... -->
+        <h3 class="activity__name">
+          Cycling
+        </h3>
+        <!-- 3/ ...i całkowity czas nad nią spędzony. -->
+        <p class="activity__description">
+          Time spent: <strong>120 min</strong>
+        </p>
+        <!-- 3/ Potrzebujemy też przycisku, który możemy wznowić lub zatrzymać czas. -->
+        <button class="activity__button--paused">
+          &#9654; Start
+        </button>
+      </div>
+    </div>
+  </body>
+</html>

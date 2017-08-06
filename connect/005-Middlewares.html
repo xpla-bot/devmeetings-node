@@ -1,0 +1,48 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Middlewares</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="index.js" >
+        	<script id="index.js" highlight="8-29,53-64" type="application/octetstream" src="005/index.js"></script>
+	<script id="_console" type="application/octetstream" src="003/_console"></script>
+	<script id="package-lock.json" type="application/octetstream" src="003/package-lock.json"></script>
+	<script id="package.json" type="application/octetstream" src="003/package.json"></script>
+	<script id="static/index.html" type="application/octetstream" src="003/static/index.html"></script>
+	<script id="static/main.js" type="application/octetstream" src="003/static/main.js"></script>
+	<script id="static/styles.css" type="application/octetstream" src="003/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Wypisywanie czasu odpowiedzi w middleware</h1></header>
+            <details>
+  <p>Tak naprawdę <code>connect</code> jest frameworkiem, który pozwala tylko i wyłącznie obsługiwać middlewary.</p>
+  <p>Każdy request wpada po kolei do middlewarów i każdy z nich może zdecydować aby odpowiedzieć lub przekazać kontrolę dalej.</p>
+  <p>Zobaczmy jak to działa na przykładzie middlewaru, który loguje czas odpowiedzi serwera.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

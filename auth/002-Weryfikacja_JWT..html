@@ -1,0 +1,69 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Weryfikacja JWT.</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column" style="width: 65%">
+      <xp-editor active="_console" tree>
+        	<script id="_console" highlight="1-2" type="application/octetstream" src="002/_console"></script>
+	<script id="app.js" highlight="1-4,14-28" type="application/octetstream" src="002/app.js"></script>
+	<script id="package-lock.json" highlight="158-168,192-202,275-285,642-656,1118-1139,1833-1908,2079-2100,2229-2239,2896-2902" type="application/octetstream" src="002/package-lock.json"></script>
+	<script id="package.json" highlight="18-24" type="application/octetstream" src="002/package.json"></script>
+	<script id="routes/activities/activities.js" highlight="14-19,26-31" type="application/octetstream" src="002/routes/activities/activities.js"></script>
+	<script id="routes/activities/activities.test.js" highlight="22-29" type="application/octetstream" src="002/routes/activities/activities.test.js"></script>
+	<script id="routes/utils.js" highlight="1-5,24-34" type="application/octetstream" src="002/routes/utils.js"></script>
+	<script id="index.js" type="application/octetstream" src="001/index.js"></script>
+	<script id="index.test.js" type="application/octetstream" src="001/index.test.js"></script>
+	<script id="config/default.json" type="application/octetstream" src="001/config/default.json"></script>
+	<script id="config/production.json" type="application/octetstream" src="001/config/production.json"></script>
+	<script id="models/activities/activities.js" type="application/octetstream" src="001/models/activities/activities.js"></script>
+	<script id="models/activities/index.js" type="application/octetstream" src="001/models/activities/index.js"></script>
+	<script id="routes/index.js" type="application/octetstream" src="001/routes/index.js"></script>
+	<script id="routes/activities/index.js" type="application/octetstream" src="001/routes/activities/index.js"></script>
+	<script id="schemas/index.js" type="application/octetstream" src="001/schemas/index.js"></script>
+	<script id="static/index.html" type="application/octetstream" src="001/static/index.html"></script>
+	<script id="static/main.js" type="application/octetstream" src="001/static/main.js"></script>
+	<script id="static/styles.css" type="application/octetstream" src="001/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column" style="width: 35%">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Weryfikacja JWT.</h1></header>
+            <details>
+  <p>Wiemy, że ktoś ma dostęp do zasobu (jest zautoryzowany), ale nie wiemy kim jest dana osoba.</p>
+  <p>W praktyce będzie nas interesowało kto próbuje modyfikować daną kolekcję czy element.</p>
+  <p>
+    Możemy skorzystać z:
+    <ul>
+      <li><strong>Sesji</strong> - zapamiętać w cookie identyfikator sesji, a następnie sprawdzać jaki użytkownik się pod nią kryje.</li>
+      <li><strong>Tokenów</strong> - do każdego requestu dołączamy token, który pozwala na sprawdzenie w bazie użytkownika, dla którego został wydany.</li>
+    </ul>
+
+    Przechowywanie tylko identyfikatora wymaga jakieś centralnego punktu, który będzie odpowiedzialny za trzymanie aktywnych "sesji". My skorzystamy z <a href="https://jwt.io/">JSON Web Tokens (JWT)</a>.
+  </p>
+  <p><strong>JWT</strong> jest otwartym formatem tokenów, który może zawierać wszystkie potrzebne zakodowane dane.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

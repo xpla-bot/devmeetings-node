@@ -1,0 +1,50 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>boom</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+      <body class="xp-slide">
+        <div class="xp-row with-comments">
+          
+    
+    <div class="xp-column">
+      <xp-editor active="_console" >
+        	<script id="_console" highlight="1-2" type="application/octetstream" src="003/_console"></script>
+	<script id="app.js" highlight="3-12,42-62,69-84,86-96,100-105,107-113,139-164" type="application/octetstream" src="003/app.js"></script>
+	<script id="package-lock.json" highlight="230-243,1401-1411" type="application/octetstream" src="003/package-lock.json"></script>
+	<script id="package.json" highlight="13-19" type="application/octetstream" src="003/package.json"></script>
+	<script id="index.js" type="application/octetstream" src="001/index.js"></script>
+	<script id="index.test.js" type="application/octetstream" src="001/index.test.js"></script>
+	<script id="config/default.json" type="application/octetstream" src="001/config/default.json"></script>
+	<script id="config/production.json" type="application/octetstream" src="001/config/production.json"></script>
+	<script id="static/index.html" type="application/octetstream" src="001/static/index.html"></script>
+	<script id="static/main.js" type="application/octetstream" src="002/static/main.js"></script>
+	<script id="static/styles.css" type="application/octetstream" src="001/static/styles.css"></script>
+      </xp-editor>
+    </div>
+  
+    <div class="xp-resize-column"></div>
+    
+    <div class="xp-column">
+      <xp-preview server runner="express"></xp-preview>
+    </div>
+  
+  
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations>
+            <header><h1>Obsługa błędów przez boom</h1></header>
+            <details>
+  <p>Generowanie błędów jest dość uciążliwe, skorzystajmy z biblioteki <code>boom</code>.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  

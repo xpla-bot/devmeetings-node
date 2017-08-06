@@ -1,0 +1,4 @@
+$ npm i --save-dev standard
+
+# Instalujemy nodemon (ponownie zależność developerska)
+$ npm i --save-dev nodemon

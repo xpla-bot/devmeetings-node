@@ -1,0 +1,5 @@
+$ npm i --save express
+$ npm remove --save connect
+
+# Pozbywamy się serve-static
+$ npm remove --save serve-static

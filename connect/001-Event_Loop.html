@@ -1,0 +1,29 @@
+
+    <!DOCTYPE html>
+    <html xp-run-server-url="https://xpla.org" xp-presence-url="wss://presence.xpla.org">
+      <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Event Loop</title>
+        <script src="https://xpla.org/static/js/slide_loader.3.0.0.js"></script>
+      </head>
+
+      <body class="xp-slide">
+        <div class="xp-row center with-comments">
+          <img src="001/resources/eventloop.png" style="max-width:90%;max-height:90%;display:block;margin:0 auto;"/>
+        </div>
+        <div class="xp-resize-row"></div>
+        <div class="xp-row comments">
+          <xp-annotations modal>
+            <header><h1>Event Loop</h1></header>
+            <details>
+  <p>W poprzednim sprincie decydowaliśmy czy użyć metody <code>fs.readFile</code> czy <code>fs.readFileSync</code>. Jaka dokładnie jest między nimi różnica?</p>
+  <p>Node.js jest jednowątkowy. Operacje, które mogą zająć dużo czasu są delegowane i kod jest wznawiany po ich zakończeniu.</p>
+  <p>Realizowane jest to przez <code>EventLoop</code> - odpowiedź na problem C10K.</p>
+</details>
+
+          </xp-annotations>
+        </div>
+      </body>
+    </html>
+  
